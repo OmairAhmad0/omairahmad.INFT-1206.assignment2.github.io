@@ -4,97 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Mozilla splash page</title>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <style>
-      /* header and body setup */
-
-      html {
-        font-family: 'Open Sans', sans-serif;
-        background: url(pattern.png);
-      }
-
-      body {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        background-color: white;
-        position: relative;
-      }
-
-      /* Header styling */
-
-      header {
-        height: 150px;
-      }
-
-      header img {
-        width: 100px;
-        position: absolute;
-        right: 32.5px;
-        top: 32.5px;
-      }
-
-      h1 {
-        font-size: 50px;
-        line-height: 140px;
-        margin: 0 0 0 32.5px;
-      }
-
-      /* main section and video styling */
-
-      main {
-        background: #ccc;
-      }
-
-      article {
-        padding: 20px;
-      }
-
-      h2 {
-        margin-top: 0;
-      }
-
-      p {
-        line-height: 2;
-      }
-
-      iframe {
-        float: left;
-        margin: 0 20px 20px 0;
-        max-width: 100%;
-      }
-
-      /* further info links */
-
-      .further-info {
-        clear: left;
-        padding: 40px 0;
-        background: #c13832;
-        box-shadow: inset 0 3px 2px rgba(0,0,0,0.5),
-                    inset 0 -3px 2px rgba(0,0,0,0.5);
-      }
-
-      .further-info a {
-        width: 25%;
-        display: block;
-        float: left;
-      }
-
-      .further-info img {
-        max-width: 100%;
-      }
-
-      .clearfix {
-        clear: both;
-      }
-
-      /* Red panda image */
-
-      .red-panda img {
-        display: block;
-        max-width: 100%;
-      }
-    </style>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700'
+      rel='stylesheet' type='text/css'>
+    <link href="originals/style.css" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -107,36 +19,68 @@
     <main>
       <article>
         <!-- insert iframe from youtube -->
-        <iframe width="400px" src="https://www.youtube.com/embed/ojcNcvb1olg?si=6mNrA_HONcBacrLl" frameborder="0"></iframe>
+        <iframe width="400"
+          src="https://www.youtube.com/embed/ojcNcvb1olg?si=6mNrA_HONcBacrLl"
+          style="border: 0">
+        </iframe>
         <h2>Rocking the free web</h2>
 
-        <p>Mozilla are a global community of technologists, thinkers, and builders, working together to keep the Internet alive and accessible, so people worldwide can be informed contributors and creators of the Web. We believe this act of human collaboration across an open platform is essential to individual growth and our collective future.</p>
+        <p>Mozilla are a global community of technologists, thinkers, and
+          builders, working together to keep the Internet alive and accessible,
+          so people worldwide can be informed contributors and creators of the
+          Web. We believe this act of human collaboration across an open
+          platform is essential to individual growth and our collective
+          future.</p>
 
-        <p>Click on the images below to find more information about the cool stuff Mozilla does. <a href="https://www.flickr.com/photos/mathiasappel/21675551065/">Red panda picture</a> by Mathias Appel.</p>
+        <p>Click on the images below to find more information about the cool
+          stuff Mozilla does. <a
+            href="https://www.flickr.com/photos/mathiasappel/21675551065/">Red
+            panda picture</a> by Mathias Appel.</p>
       </article>
 
       <div class="further-info">
         <!-- insert images with srcsets and sizes -->
         <a href="https://www.mozilla.org/en-US/firefox/new/">
-          <img src="/edited/firefox_logo-only_RGB-400.png" alt="Large Firefox Logo">
+          <img
+            alt="Firefox Logo"
+            src="/edited/firefox_logo-only_RGB-400.png"
+            srcset="/edited/firefox_logo-only_RGB-120.png 120w, 
+                    /edited/firefox_logo-only_RGB-400.png 400w"
+            sizes="(max-width: 500px) 120px, 400px">
         </a>
         <a href="https://www.mozilla.org/">
-          <img src="/edited/mozilla-dinosaur-head-400.png" alt="Large Dinosaur Head">
+          <img
+            alt="Dinosaur Head"
+            src="/edited/mozilla-dinosaur-head-400.png"
+            srcset="/edited/mozilla-dinosaur-head-120.png 120w,
+                    /edited/mozilla-dinosaur-head-400.png 400w"
+            sizes="(max-width: 500px) 120px, 400px">
         </a>
         <a href="https://addons.mozilla.org/">
-          <img src="/originals/firefox-addons.jpg" alt="Large Firefox Addons">
+          <img
+            alt="Firefox Addons"
+            src="/originals/firefox-addons.jpg"
+            srcset="/edited/firefox-addons-120.jpg 120w,
+                    /originals/firefox-addons.jpg 400w"
+            sizes="(max-width: 500px) 120px, 400px">
         </a>
         <a href="https://developer.mozilla.org/en-US/">
-          <img src="/originals/mdn.svg" alt="MDN">
+          <img
+            alt="MDN"
+            src="/originals/mdn.svg">
         </a>
         <div class="clearfix"></div>
       </div>
 
       <div class="red-panda">
         <!-- insert picture element -->
-        <img src="/edited/red-panda-1200.jpg" alt="Landscape Red Panda">
+        <picture>
+          <source media="(min-width: 600px)"
+            srcset="/edited/red-panda-1200.jpg">
+          <img src="/edited/red-panda-600.jpg"
+            alt="Red Panda">
+        </picture>
       </div>
-
     </main>
   </body>
 </html>
